@@ -1,10 +1,9 @@
+// script.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Get elements
   const outlineText = document.querySelector('.outline-text');
   const solidText = document.querySelector('.solid-text');
   const loadingText = document.querySelector('.loading-text');
   
-  // Create a timeline
   const tl = gsap.timeline({
     onComplete: () => {
       // Redirect to home.html after the timeline is complete
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-  // Set initial states
   gsap.set(solidText, {
       'clip-path': 'inset(100% 0 0 0)'
   });
@@ -23,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
       opacity: 0
   });
 
-  // Animation sequence
   tl.to(outlineText, {
       opacity: 1,
       duration: 1,
