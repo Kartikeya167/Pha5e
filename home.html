@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHA5E Style Homepage</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #232323;
+    color: #fff;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #232323;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    z-index: 101;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 101;
+    padding-bottom: 5px;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.text-container {
+    position: relative;
+    text-align: center;
+    z-index: 3;
+    width: 90%;
+    max-width: 1400px;
+}
+
+.main-text {
+    font-size: 8vw;
+    font-weight: bold;
+    white-space: pre-line;
+    line-height: 1.1;
+    -webkit-text-stroke: 1px #fff;
+    color: #fff;
+    transition: color 0.4s ease;
+}
+
+.image-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.hover-image {
+    position: absolute;
+    width: 303px;
+    height: 188px;
+    overflow: hidden;
+    transform-origin: center center;
+    will-change: transform;
+    cursor: pointer;
+    border-radius: 8px;
+    z-index: 2;
+    transition: z-index 0.3s;
+}
+
+.hover-image.active {
+    z-index: 4;
+}
+
+.hover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+    transition: transform 0.3s ease;
+}
+
+.image-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    padding: 20px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+
+.image-details h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.image-details p {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.hover-image.active .image-details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hover-image:nth-child(1) { top: 21%; left: 8%; }
+.hover-image:nth-child(2) { top: 14%; right: 21%; }
+.hover-image:nth-child(3) { bottom: 18%; left: 15%; }
+.hover-image:nth-child(4) { bottom: 30%; right: 20%; }
+
+@media (max-width: 768px) {
+    .hover-image {
+        width: 200px;
+        height: 150px;
+    }
+    .main-text {
+        font-size: 12vw;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="nav-wrapper">
+        <a href="#" class="logo">PHA5E</a>
+        <div class="nav-menu">
+            <a href="#">Our vision</a>
+            <a href="#">Our team</a>
+            <a href="#">Our projects</a>
+            <a href="#">Contact us</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="text-container">
+            <h1 class="main-text">CREATING VISUALS AND<br>INTERACTIVE EXPERIENCES</h1>
+        </div>
+
+        <div class="image-container">
+            <div class="hover-image">
+                <img src="https://2022-pha5e-website-prod.s3.eu-west-3.amazonaws.com/assets/bigger-science_thumbnail-2.png" alt="Project 1">
+                <div class="image-details">
+                    <h3>MUCEM</h3>
+                    <p>Experiential Website</p>
+                </div>
+            </div>
+            <div class="hover-image">
+                <img src="https://2022-pha5e-website-prod.s3.eu-west-3.amazonaws.com/assets/map-interactive.png" alt="Project 2">
+                <div class="image-details">
+                    <h3>Digital Experience</h3>
+                    <p>Interactive Installation</p>
+                </div>
+            </div>
+            <div class="hover-image">
+                <img src="https://2022-pha5e-website-prod.s3.eu-west-3.amazonaws.com/assets/Capture%20da%C3%8CeI%C3%8Ccran%202024-01-04%20aI%C3%8C%2016.41.06-2.png" alt="Project 3">
+                <div class="image-details">
+                    <h3>Visual Creation</h3>
+                    <p>Creative Direction</p>
+                </div>
+            </div>
+            <div class="hover-image">
+                <img src="https://2022-pha5e-website-prod.s3.eu-west-3.amazonaws.com/assets/Capture-d%C3%A2e%C3%8Ccran-2023-04-03-a%C3%8C-10.59.43_2-2.jpg" alt="Project 4">
+                <div class="image-details">
+                    <h3>Digital Art</h3>
+                    <p>Immersive Experience</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+const images = document.querySelectorAll('.hover-image');
+const mainText = document.querySelector('.main-text');
+const container = document.querySelector('.container');
+
+function getDistance(x1, y1, x2, y2) {
+    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+}
+
+function handleMouseMove(e) {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    const boundingBox = container.getBoundingClientRect();
+    const hoverRadius = Math.min(boundingBox.width, boundingBox.height) * 0.25;
+    let isAnyImageHovered = false;
+
+    images.forEach(image => {
+        const rect = image.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const distance = getDistance(mouseX, mouseY, centerX, centerY);
+
+        if (distance < hoverRadius) {
+            isAnyImageHovered = true;
+            const maxMove = 75;
+            const scale = 1.2;
+
+            const moveX = (mouseX - centerX) * 0.3;
+            const moveY = (mouseY - centerY) * 0.3;
+
+            const limitedX = Math.max(-maxMove, Math.min(maxMove, moveX));
+            const limitedY = Math.max(-maxMove, Math.min(maxMove, moveY));
+
+            const rotation = (moveX / maxMove) * 5;
+
+            image.classList.add('active');
+
+            gsap.to(image, {
+                x: limitedX,
+                y: limitedY,
+                scale: scale,
+                rotation: rotation,
+                duration: 0.3,
+                ease: "power1.out"
+            });
+
+            gsap.to(image.querySelector('img'), {
+                scale: 1.05,
+                x: -limitedX * 0.05,
+                y: -limitedY * 0.05,
+                duration: 0.3,
+                ease: "power1.out"
+            });
+
+            gsap.to(image.querySelector('.image-details'), {
+                opacity: 1,
+                y: 0,
+                duration: 0.3,
+                ease: "power1.out"
+            });
+        } else {
+            image.classList.remove('active');
+            
+            gsap.to(image, {
+                x: 0,
+                y: 0,
+                scale: 1,
+                rotation: 0,
+                duration: 0.3,
+                ease: "power1.out"
+            });
+
+            gsap.to(image.querySelector('img'), {
+                scale: 1,
+                x: 0,
+                y: 0,
+                duration: 0.3,
+                ease: "power1.out"
+            });
+
+            gsap.to(image.querySelector('.image-details'), {
+                opacity: 0,
+                y: 100,
+                duration: 0.3,
+                ease: "power1.out"
+            });
+        }
+    });
+
+    gsap.to(mainText, {
+        color: isAnyImageHovered ? 'transparent' : '#fff',
+        duration: 0.3
+    });
+
+    mainText.parentElement.style.zIndex = isAnyImageHovered ? '1' : '3';
+}
+
+let timeout;
+container.addEventListener('mousemove', (e) => {
+    if (!timeout) {
+        timeout = setTimeout(() => {
+            handleMouseMove(e);
+            timeout = null;
+        }, 10);
+    }
+});
+
+window.addEventListener('load', () => {
+    gsap.fromTo('.hover-image', {
+        x: '-=100',
+        y: '+=100',
+        opacity: 0,
+        scale: 0.8
+    }, {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out'
+    });
+
+    gsap.fromTo('.main-text', {
+        y: '+=50',
+        opacity: 0
+    }, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        delay: 0.5,
+        ease: 'power3.out'
+    });
+});
+    </script>
+</body>
+</html>
